@@ -1,11 +1,11 @@
-import { CardsMovies } from "../components/cards/cards";
 import { Header } from "../components/header/header";
+import { Movies } from "../components/moviesAPI/movies";
 
 export const Home = () => {
   return (
     <>
-      <Header />
-      <CardsMovies />
+      {/* <Header /> */}
+      <Movies />
     </>
   );
 };

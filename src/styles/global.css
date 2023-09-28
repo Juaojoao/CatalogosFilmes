@@ -14,3 +14,22 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .page {
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: 468px) {
+  .page {
+    padding: 0 1rem;
+  }
+}

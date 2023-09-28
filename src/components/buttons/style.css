@@ -1,0 +1,53 @@
+.btn-focus::before {
+  content: "";
+  background-color: rgb(24, 27, 31);
+  position: absolute;
+  width: 97%;
+  height: 90%;
+  border-radius: 25px;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.button {
+  background-color: rgb(24, 27, 31);
+  position: relative;
+  line-height: 50px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 25px;
+  padding: 0 20px;
+  border: 0;
+}
+
+.btn-focus {
+  background: linear-gradient(
+    40deg,
+    #f78c1f 0,
+    #ff2600 33%,
+    #ffa900 69%,
+    #f78c1f 100%
+  );
+}
+
+.btn-hover {
+  background: linear-gradient(
+    146deg,
+    #f78c1f 0,
+    #ff2600 33%,
+    #ffa900 69%,
+    #f78c1f 100%
+  );
+}
+
+.button span {
+  position: relative;
+  z-index: 10;
+  font-weight: 400;
+  font-size: 10px;
+
+  text-transform: uppercase;
+}
