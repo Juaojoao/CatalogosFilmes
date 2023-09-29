@@ -66,6 +66,7 @@
 .infos-bases {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .infos-bases .rating {

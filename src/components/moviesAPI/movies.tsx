@@ -31,7 +31,7 @@ export const Movies = () => {
 
   return (
     <div className="container">
-      <h1>FILMES</h1>
+      <h1 className="title-h1">FILMES</h1>
       <div className="button-movies">
         {movieList.map((movie) => (
           <Button

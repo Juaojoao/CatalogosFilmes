@@ -4,8 +4,10 @@ import { useDragHook } from "../../hooks/useDragHook";
 export interface Movie {
   key: string;
   poster_path: string;
-  title: string;
-  release_date: string;
+  title?: string;
+  name?: string;
+  release_date?: string;
+  first_air_date?: string;
   vote_average: number;
 }
 
@@ -21,6 +23,17 @@ export const CardsMovies = ({ movies, className }: CardsMoviesProps) => {
     const date = new Date(data);
     return date.getFullYear();
   };
+
+  const extratDataRelease = (movie: Movie) => {
+    if (!movie.release_date) return movie.first_air_date;
+    return movie.release_date;
+  };
+
+  const extratTitle = (movie: Movie) => {
+    if (!movie.title) return movie.name;
+    return movie.title;
+  };
+
   return (
     <div
       className={`cards ${className}`}
@@ -33,16 +46,16 @@ export const CardsMovies = ({ movies, className }: CardsMoviesProps) => {
           <li key={movie.key}>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
+              alt={extratTitle(movie)}
               width={185}
               height={270}
               decoding="async"
             />
             <div className="infos">
-              <span>{movie.title}</span>
+              <span>{extratTitle(movie)}</span>
               <div className="infos-bases">
                 <div className="year">
-                  <span>{extratYear(movie.release_date)}</span>
+                  <span>{extratYear(extratDataRelease(movie) || "")}</span>
                 </div>
                 <div className="rating">
                   <img src="/src/assets/icons/goldenStar.png" alt="" />

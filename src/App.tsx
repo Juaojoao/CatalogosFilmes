@@ -5,6 +5,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="page">
+        <div id="launcherBg"></div>
         <Router />
       </div>
     </BrowserRouter>

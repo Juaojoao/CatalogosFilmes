@@ -1,0 +1,18 @@
+.home-launcher {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 450px;
+  padding: 20px 50px;
+}
+
+.home-launcher .infos {
+  height: 100%;
+}
+
+.home-launcher img {
+  width: 523px;
+  height: 400px;
+  object-fit: cover;
+}
