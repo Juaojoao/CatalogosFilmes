@@ -1,3 +1,4 @@
+import { FooterComponent } from "../components/footer/footer";
 import { Header } from "../components/header/header";
 import { HomeLauncher } from "../components/homeLauncher/homeLauncher";
 import { Movies } from "../components/moviesAPI/movies";
@@ -12,6 +13,7 @@ export const Home = () => {
         <Movies />
         <Series />
       </div>
+      <FooterComponent />
     </>
   );
 };

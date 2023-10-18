@@ -10,6 +10,15 @@
   font-family: Mulish, sans-serif;
 }
 
+body {
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .page {
   max-width: 1200px;
   margin: 0 auto;
@@ -27,6 +36,7 @@
   transition: all 0.5s ease-in-out;
   will-change: opacity;
   overflow: hidden;
+  z-index: -1;
 }
 
 #launcherBg::after {
@@ -58,4 +68,25 @@
 .title-h1 {
   position: relative;
   z-index: 300;
+}
+
+.hover {
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.gc {
+  color: #b5b5b5;
+}
+
+.container-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.container-cards > div > h2 {
+  text-transform: uppercase;
 }

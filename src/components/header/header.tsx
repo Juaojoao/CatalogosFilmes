@@ -3,7 +3,7 @@ import { headerData } from "./data.header";
 import { useState } from "react";
 
 export const Header = () => {
-  const [selected, setSelected] = useState("Inicio");
+  const [selected, setSelected] = useState("");
 
   return (
     <header>

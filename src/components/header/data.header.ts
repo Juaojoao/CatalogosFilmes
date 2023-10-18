@@ -14,9 +14,4 @@ export const headerData = [
     title: "Séries",
     path: "/series",
   },
-  {
-    id: 4,
-    title: "Animes",
-    path: "/animes",
-  },
 ];

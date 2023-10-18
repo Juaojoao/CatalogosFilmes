@@ -1,0 +1,100 @@
+footer {
+  margin: 50px 0;
+}
+
+.footer-desc {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.footer-desc h2 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100px;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.footer-menu .column {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+}
+
+.footer-menu .title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-menu .listing a {
+  font-size: 14px;
+  display: block;
+  line-height: 30px;
+  padding-left: 5px;
+}
+
+.footer-menu .appButton,
+.footer-menu .followTwitter {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  border-radius: 25px;
+  box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0);
+  position: relative;
+  height: 50px;
+  width: 160px;
+  font-size: 12px;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-menu .app .ask,
+.footer-menu .social .info,
+.footer-menu .tmdb .info {
+  font-size: 12px;
+  margin-top: 10px;
+  max-width: 200px;
+}
+
+.gicon {
+  padding: 1px;
+  vertical-align: middle;
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.gicon.w20 svg {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.footer-menu .appButton {
+  background: rgb(24, 27, 31);
+  width: 190px;
+  margin-bottom: 10px;
+}
+
+#footerCopyright {
+  margin-top: 100px;
+  font-size: 12px;
+  text-align: left;
+}
