@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
-import { TMDBAuth } from "../../services/API";
-import { Button } from "../buttons/button";
-import { CardsMovies } from "../cards/cardsDrag";
+import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
+import { Button } from "../../buttons/button";
+import { CardsComponent } from "../../cards/cardsDrag";
+import { serieList } from "../../../services/TMDB_API/dataAPI";
 
-export const Series = () => {
+export const SeriesComponent = () => {
   const [series, setSeries] = useState([]);
   const [selectedSeries, setSelectedSeries] = useState("top_rated");
   const [fadeEnter, setFadeEnter] = useState(false);
-  const serieList = [
-    { text: "Mais Bem Avaliada", url: "top_rated" },
-    { text: "Populares", url: "popular" },
-    { text: "Na TV", url: "on_the_air" },
-    { text: "Em Exibição Hoje", url: "airing_today" },
-  ];
 
   useEffect(() => {
     const getMoviesList = async () => {
@@ -41,7 +36,10 @@ export const Series = () => {
           />
         ))}
       </div>
-      <CardsMovies movies={series} className={fadeEnter ? "fade-enter" : ""} />
+      <CardsComponent
+        movies={series}
+        className={fadeEnter ? "fade-enter" : ""}
+      />
     </div>
   );
 };

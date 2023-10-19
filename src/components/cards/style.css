@@ -1,5 +1,18 @@
 .cards {
   overflow-x: hidden;
+  position: relative;
+}
+
+.cards::after {
+  content: "";
+  box-shadow: inset 60px 0 40px rgba(0, 0, 0, 0.5),
+    inset -60px 0 40px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
 }
 
 .cards ul {
@@ -61,6 +74,8 @@
 .cards li img {
   object-fit: cover;
   border-radius: 1rem;
+  max-width: 185px;
+  max-height: 270px;
 }
 
 .infos-bases {
@@ -79,4 +94,29 @@
   width: 20px;
   height: 20px;
   margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .cards li img {
+    max-width: 150px;
+    max-height: 220px;
+  }
+
+  .cards li .infos {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards li img {
+    max-width: 120px;
+    max-height: 180px;
+  }
+  .cards li .infos {
+    padding: 0.5rem;
+  }
+
+  .cards li .infos span {
+    font-size: 0.6rem;
+  }
 }

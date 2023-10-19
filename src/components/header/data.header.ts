@@ -2,16 +2,16 @@ export const headerData = [
   {
     id: 1,
     title: "Inicio",
-    path: "/",
+    path: "/CatalogosFilmes/",
   },
   {
     id: 2,
     title: "Filmes",
-    path: "/filmes",
+    path: "/CatalogosFilmes/filmes",
   },
   {
     id: 3,
     title: "Séries",
-    path: "/series",
+    path: "/CatalogosFilmes/series",
   },
 ];

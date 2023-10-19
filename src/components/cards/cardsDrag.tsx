@@ -1,5 +1,6 @@
 import "./style.css";
 import { useDragHook } from "../../hooks/useDragHook";
+import ImgStar from "../../assets/icons/goldenStar.png";
 
 export interface Movie {
   key: string;
@@ -16,7 +17,7 @@ export interface CardsMoviesProps {
   className?: string;
 }
 
-export const CardsMovies = ({ movies, className }: CardsMoviesProps) => {
+export const CardsComponent = ({ movies, className }: CardsMoviesProps) => {
   const { startDrag, endDrag, drag } = useDragHook();
 
   const extratYear = (data: string) => {
@@ -47,8 +48,6 @@ export const CardsMovies = ({ movies, className }: CardsMoviesProps) => {
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={extratTitle(movie)}
-              width={185}
-              height={270}
               decoding="async"
             />
             <div className="infos">
@@ -58,7 +57,7 @@ export const CardsMovies = ({ movies, className }: CardsMoviesProps) => {
                   <span>{extratYear(extratDataRelease(movie) || "")}</span>
                 </div>
                 <div className="rating">
-                  <img src="/src/assets/icons/goldenStar.png" alt="" />
+                  <img src={ImgStar} alt="" />
                   <span>{movie.vote_average}</span>
                 </div>
               </div>

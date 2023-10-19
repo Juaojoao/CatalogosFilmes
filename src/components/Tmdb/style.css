@@ -15,3 +15,10 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .button-movies {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

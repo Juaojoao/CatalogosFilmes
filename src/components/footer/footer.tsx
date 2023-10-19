@@ -6,6 +6,8 @@ import {
   footerDataSocial,
 } from "./data";
 
+import IconLogo from "../../assets/icons/tmdb.svg";
+
 export const FooterComponent = () => {
   return (
     <footer className="gc">
@@ -70,7 +72,7 @@ export const FooterComponent = () => {
               className="box"
               target="_BLANK"
             >
-              <img src={item.svg} alt={item.title} width={199} height={29} />
+              <img src={IconLogo} alt={item.title} width={199} height={29} />
             </a>
             <div className="info">{item.content}</div>
           </div>

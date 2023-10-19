@@ -51,6 +51,5 @@ export const footerDataApi = [
     title: "Conteúdo & API",
     content:
       "Todo o conteúdo nesse site é promovido pela TMDB. A maior api de filmes, series e animes do mundo.",
-    svg: "src/assets/icons/tmdb.svg",
   },
 ];

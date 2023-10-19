@@ -60,3 +60,9 @@ header nav ul li a.active:hover::after,
 header nav ul li a.active {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
+  }
+}

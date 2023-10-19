@@ -1,8 +1,8 @@
 import { FooterComponent } from "../components/footer/footer";
 import { Header } from "../components/header/header";
 import { HomeLauncher } from "../components/homeLauncher/homeLauncher";
-import { Movies } from "../components/moviesAPI/movies";
-import { Series } from "../components/seriesAPI/series";
+import { MoviesComponent } from "../components/Tmdb/cardDrag/movies";
+import { SeriesComponent } from "../components/Tmdb/cardDrag/series";
 
 export const Home = () => {
   return (
@@ -10,8 +10,8 @@ export const Home = () => {
       <Header />
       <HomeLauncher />
       <div className="container-cards">
-        <Movies />
-        <Series />
+        <MoviesComponent />
+        <SeriesComponent />
       </div>
       <FooterComponent />
     </>
