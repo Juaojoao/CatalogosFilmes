@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
 import { Button } from "../../buttons/button";
 import { CardsComponent } from "../../cards/cardsDrag";
-import { serieList } from "../../../services/TMDB_API/dataAPI";
+import { serieList } from "../../../util/variaveis";
 
 export const SeriesComponent = () => {
   const [series, setSeries] = useState([]);
@@ -20,7 +20,7 @@ export const SeriesComponent = () => {
 
     setTimeout(() => {
       setFadeEnter(false);
-    }, 1100);
+    }, 2000);
   }, [selectedSeries]);
 
   return (
@@ -38,6 +38,7 @@ export const SeriesComponent = () => {
       </div>
       <CardsComponent
         movies={series}
+        url="series"
         className={fadeEnter ? "fade-enter" : ""}
       />
     </div>

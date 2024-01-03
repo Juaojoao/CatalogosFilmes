@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
 import { CardsComponent } from "../../cards/cardsDrag";
 import { Button } from "../../buttons/button";
-import { MovieList } from "../../../services/TMDB_API/dataAPI";
+import { MovieList } from "../../../util/variaveis";
 
 export const MoviesComponent = () => {
   const [movies, setMovies] = useState([]);
@@ -21,7 +21,7 @@ export const MoviesComponent = () => {
 
     setTimeout(() => {
       setFadeEnter(false);
-    }, 1100);
+    }, 2000);
   }, [selectedMovie]);
 
   return (
@@ -39,6 +39,7 @@ export const MoviesComponent = () => {
       </div>
       <CardsComponent
         movies={movies}
+        url="filmes"
         className={fadeEnter ? "fade-enter" : ""}
       />
     </div>

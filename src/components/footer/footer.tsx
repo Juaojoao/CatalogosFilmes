@@ -30,8 +30,8 @@ export const FooterComponent = () => {
           ))}
         </div>
 
-        {footerDataSocial.map((item) => (
-          <div className="column social">
+        {footerDataSocial.map((item, index) => (
+          <div key={index} className="column social">
             <div className="title">Mídias Sociais</div>
             <a
               key={item.title}
@@ -46,8 +46,8 @@ export const FooterComponent = () => {
             <div className="info">{item.content}</div>
           </div>
         ))}
-        {footerDataApp.map((item) => (
-          <div className="column app">
+        {footerDataApp.map((item, index) => (
+          <div key={index} className="column app">
             <div className="title">Aplicativo TMDB</div>
             <a
               key={item.title}
@@ -62,8 +62,8 @@ export const FooterComponent = () => {
             <div className="ask">{item.content}</div>
           </div>
         ))}
-        {footerDataApi.map((item) => (
-          <div className="column tmdb">
+        {footerDataApi.map((item, index) => (
+          <div key={index} className="column tmdb">
             <div className="title">Conteúdo &amp; API</div>
             <a
               key={item.title}

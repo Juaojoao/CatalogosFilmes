@@ -2,16 +2,16 @@ export const headerData = [
   {
     id: 1,
     title: "Inicio",
-    path: "/CatalogosFilmes/",
+    path: "/fireflix/",
   },
   {
     id: 2,
     title: "Filmes",
-    path: "/CatalogosFilmes/filmes",
+    path: "/fireflix/filmes",
   },
   {
     id: 3,
     title: "Séries",
-    path: "/CatalogosFilmes/series",
+    path: "/fireflix/series",
   },
 ];

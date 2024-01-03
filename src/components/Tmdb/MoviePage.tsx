@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardsComponent } from "../cards/cardsDrag";
-import { MovieList } from "../../services/TMDB_API/dataAPI";
+import { MovieList } from "../../util/variaveis";
 import { TMDBAuth } from "../../services/TMDB_API/TmdbAPI";
 
 type Movies = {
@@ -21,13 +21,14 @@ export const MoviePageComponent = () => {
       }));
       setTimeout(() => {
         setFadeEnter(false);
-      }, 1100);
+      }, 2000);
     };
 
     MovieList.forEach((movie) => {
       fetchData(movie.url);
     });
   }, []);
+
   return (
     <div className="container-cards">
       {MovieList.map((movie) => (
