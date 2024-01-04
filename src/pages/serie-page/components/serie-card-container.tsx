@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
-import { Button } from "../../buttons/button";
-import { CardsComponent } from "../../cards/cardsDrag";
+import { Button } from "../../../components/buttons/button";
+import { CardsComponent } from "../../../components/cards/cardsDrag";
 import { serieList } from "../../../util/variaveis";
 
 export const SeriesComponent = () => {

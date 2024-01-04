@@ -51,3 +51,9 @@
 
   text-transform: uppercase;
 }
+
+@media (max-width: 768px) {
+  .button {
+    line-height: 40px;
+  }
+}

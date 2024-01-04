@@ -12,7 +12,7 @@ export const CardsComponent = ({
   className,
   url,
 }: CardsMoviesProps) => {
-  const { startDrag, endDrag, drag } = useDragHook();
+  const { startDrag, drag, endDrag, handleLinkClick } = useDragHook();
 
   return (
     <div
@@ -23,7 +23,11 @@ export const CardsComponent = ({
     >
       <ul>
         {movies.map((movie, index) => (
-          <Link key={index} to={`/fireflix/${url}/${movie.id}`}>
+          <Link
+            key={index}
+            to={`/fireflix/${url}/${movie.id}`}
+            onClick={handleLinkClick}
+          >
             <li>
               <img
                 src={`${image_api}${movie.poster_path}`}
@@ -38,7 +42,7 @@ export const CardsComponent = ({
                   </div>
                   <div className="rating">
                     <img src={ImgStar} alt="" />
-                    <span>{movie.vote_average}</span>
+                    <span>{movie.vote_average.toFixed(1)}</span>
                   </div>
                 </div>
               </div>

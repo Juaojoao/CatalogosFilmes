@@ -1,18 +1,5 @@
 .cards {
   overflow-x: hidden;
-  position: relative;
-}
-
-.cards::after {
-  content: "";
-  box-shadow: inset 60px 0 40px rgba(0, 0, 0, 0.5),
-    inset -60px 0 40px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
 }
 
 .cards ul {
@@ -50,7 +37,7 @@
     rgba(0, 0, 0, 0) 100%
   );
   z-index: 1;
-  border-radius: 1rem;
+  border-radius: 0.9rem;
 }
 
 .cards li .infos {
@@ -108,10 +95,30 @@
 }
 
 @media (max-width: 480px) {
+  .cards {
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cards ul {
+    gap: 1rem;
+  }
+
   .cards li img {
     max-width: 120px;
     max-height: 180px;
+    border-radius: 0.5rem;
   }
+
+  .cards li::after {
+    border-radius: 0.4rem;
+  }
+
   .cards li .infos {
     padding: 0.5rem;
   }

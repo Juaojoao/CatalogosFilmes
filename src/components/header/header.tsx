@@ -1,6 +1,7 @@
 import "./style.css";
 import { headerData } from "./data.header";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [selected, setSelected] = useState("");
@@ -9,7 +10,10 @@ export const Header = () => {
     <header>
       <div className="container">
         <nav>
-          <div className="logo">LOGO</div>
+          <Link className="logo" to="/fireflix">
+            LOGO
+          </Link>
+
           <ul>
             {headerData.map((item, index) => {
               return (

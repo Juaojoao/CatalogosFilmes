@@ -1,4 +1,8 @@
-header nav::before {
+header .container {
+  padding: 10px;
+}
+
+header .container::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -62,7 +66,15 @@ header nav ul li a.active {
 }
 
 @media (max-width: 768px) {
+  .nav-mobile {
+    display: block;
+  }
+
   header nav ul {
     display: none;
+  }
+
+  header .container {
+    display: flex;
   }
 }
