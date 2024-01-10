@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
 import { CardsComponent } from "../../../components/cards/cardsDrag";
 import { Button } from "../../../components/buttons/button";
-import { MovieList } from "../../../util/variaveis";
+import { MovieList, language_api } from "../../../util/variaveis";
 
 export const MoviesComponent = () => {
   const [movies, setMovies] = useState([]);
@@ -12,7 +12,7 @@ export const MoviesComponent = () => {
 
   useEffect(() => {
     const getMoviesList = async () => {
-      const response = await TMDBAuth.get(`movie/${selectedMovie}`);
+      const response = await TMDBAuth.get(`movie/${selectedMovie}${language_api}`);
       setMovies(response.data.results);
     };
 

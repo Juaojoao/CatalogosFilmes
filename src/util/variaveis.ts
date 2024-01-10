@@ -1,4 +1,5 @@
-export const image_api = "https://image.tmdb.org/t/p/w500";
+export const image_api = "https://image.tmdb.org/t/p/original";
+export const language_api = "?language=pt-BR"
 
 export const MovieList = [
   { text: "Lançamentos", url: "now_playing" },

@@ -1,0 +1,63 @@
+.datails-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+.datails-container > div {
+    display: flex;
+    gap: 2rem;
+}
+
+.datails-container img {
+    border-radius: 0.5rem;
+    width: 300px;
+}
+
+.datails-container .infos-container {
+    flex: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.datails-container .info-names{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.datails-container .info-name2{
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.datails-container .info-name {
+    font-size: 12px;
+    line-height: 30px;
+    width: auto;
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+
+.datails-container .infos-bases {
+   gap: 1rem;
+   justify-content: inherit;
+}
+
+.datails-container .infos-bases span{
+    font-size: 1.1rem;
+    opacity: .7;
+}
+
+.datails-container .infos .rating{
+    font-size: 1.5rem;
+}
+
+.datails-container .overviwer-container{
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    opacity: 0.7;
+}

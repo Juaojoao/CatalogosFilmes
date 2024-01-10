@@ -58,7 +58,7 @@
   font-size: 0.8rem;
 }
 
-.cards li img {
+.cards li img{
   object-fit: cover;
   border-radius: 1rem;
   max-width: 185px;

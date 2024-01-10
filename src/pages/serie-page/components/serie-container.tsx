@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardsComponent } from "../../../components/cards/cardsDrag";
-import { serieList } from "../../../util/variaveis";
+import { language_api, serieList } from "../../../util/variaveis";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
 
 type Series = {
@@ -14,7 +14,7 @@ export const SeriePageComponent = () => {
   useEffect(() => {
     const fetchData = async (url: string) => {
       setFadeEnter(true);
-      const response = await TMDBAuth.get(`tv/${url}`);
+      const response = await TMDBAuth.get(`tv/${url}${language_api}`);
       setSeries((prevSeries) => ({
         ...prevSeries,
         [url]: response.data.results,

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
 import { Button } from "../../../components/buttons/button";
 import { CardsComponent } from "../../../components/cards/cardsDrag";
-import { serieList } from "../../../util/variaveis";
+import { language_api, serieList } from "../../../util/variaveis";
 
 export const SeriesComponent = () => {
   const [series, setSeries] = useState([]);
@@ -11,7 +11,7 @@ export const SeriesComponent = () => {
 
   useEffect(() => {
     const getMoviesList = async () => {
-      const response = await TMDBAuth.get(`tv/${selectedSeries}`);
+      const response = await TMDBAuth.get(`tv/${selectedSeries}${language_api}`);
       setSeries(response.data.results);
     };
 

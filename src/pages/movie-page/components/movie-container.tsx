@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardsComponent } from "../../../components/cards/cardsDrag";
-import { MovieList } from "../../../util/variaveis";
+import { MovieList, language_api } from "../../../util/variaveis";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
 
 type Movies = {
@@ -14,7 +14,7 @@ export const MoviePageComponent = () => {
   useEffect(() => {
     const fetchData = async (url: string) => {
       setFadeEnter(true);
-      const response = await TMDBAuth.get(`movie/${url}`);
+      const response = await TMDBAuth.get(`movie/${url}${language_api}`);
       setMovies((prevMovies) => ({
         ...prevMovies,
         [url]: response.data.results,
