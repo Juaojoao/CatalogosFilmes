@@ -1,17 +1,29 @@
-import './syle.css'
-import ImgStar from "../../assets/icons/goldenStar.png";
+import './style.css'
 import { getReleaseYear } from "../../util/func/extrat-date";
 import { extratTitle } from "../../util/func/extrat-title";
-import { CardsMoviesProps } from "../../util/interface/tmdb-interface";
+import { DatailsProps } from "../../util/interface/tmdb-interface";
 import { image_api } from "../../util/variaveis";
+import { Link } from 'react-router-dom';
+import { VideoComponent } from '../video-component/video-component';
 
-export const DatailsTmdbComponent = ({ movies }: CardsMoviesProps) => {
+export const DatailsTmdbComponent = ({ movies, credits, trailerId }: DatailsProps) => {
+
+  const timeToMinutes = (minutes: number) => {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    const formattedHoures = String(hours)
+    const formattedMinutes = String(remainingMinutes).padStart(2, '0');
+
+    return `${formattedHoures}h, ${formattedMinutes}min`
+  }
 
   return (
     <div className="datails-container">
       {movies.map((movie, index) => (
         <div key={index}>
           <img
+          className='img'
             src={`${image_api}${movie.poster_path}`}
             alt={extratTitle(movie)}
             decoding="async"
@@ -23,18 +35,30 @@ export const DatailsTmdbComponent = ({ movies }: CardsMoviesProps) => {
                 <span className='info-name2'>{extratTitle(movie)}</span>
               </div>
               <div className="infos-bases">
-                <div className="rating">
-                  <img src={ImgStar} alt="" />
-                  <span>{movie.vote_average.toFixed(1) }</span>
-                </div>
                 <div className="year">
                   <span>{getReleaseYear(movie)}</span>
                 </div>
+                <div className="rating">
+                  <span>{`${movie.vote_average.toFixed(1)}/10` }</span>
+                </div>
+                <div className="runtime">
+                  <span>{timeToMinutes(movie.runtime)}</span>
+                </div>
+                
               </div>
+            </div>
+            <div className="actress-container">
+            {credits.slice(0,4).map((actress, index)=> (
+                <Link key={index} to={`/fireflix/pessoa/${actress.id}-${actress.name.replace(' ', '-').toLocaleLowerCase()}`}>
+                  <img src={`${image_api}${actress.profile_path}`} alt="" height={67} width={45} />
+                  <span>{actress.name}</span>
+                </Link>
+            ))}
             </div>
             <div className="overviwer-container">
               {movie.overview}
             </div>
+            {trailerId && <VideoComponent videoId={trailerId}/>}
           </div>
         </div>
       ))}

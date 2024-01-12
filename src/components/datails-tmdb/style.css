@@ -1,35 +1,37 @@
-.datails-container{
-    background-color: rgba(0, 0, 0, 0.5);
+.datails-container {
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     margin-top: 2rem;
     border-radius: 1rem;
+
 }
 
-.datails-container > div {
+.datails-container>div {
     display: flex;
     gap: 2rem;
 }
 
-.datails-container img {
+.datails-container .img.img {
     border-radius: 0.5rem;
-    width: 300px;
+    height: 400px;
 }
 
 .datails-container .infos-container {
     flex: 1;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-.datails-container .info-names{
     display: flex;
     flex-direction: column;
-    text-align: center;
-
+    gap: 20px;
 }
 
-.datails-container .info-name2{
+.datails-container .info-names {
+    display: flex;
+    flex-direction: column;
+}
+
+.datails-container .info-name2 {
     font-size: 32px;
     line-height: 42px;
 }
@@ -43,21 +45,83 @@
 }
 
 .datails-container .infos-bases {
-   gap: 1rem;
-   justify-content: inherit;
+    margin-top: 10px;
+    gap: 1rem;
+    justify-content: inherit;
 }
 
-.datails-container .infos-bases span{
-    font-size: 1.1rem;
-    opacity: .7;
+.datails-container .infos-bases span {
+    font-weight: 400;
 }
 
-.datails-container .infos .rating{
-    font-size: 1.5rem;
+.datails-container .year {
+    letter-spacing: 2px;
 }
 
-.datails-container .overviwer-container{
-    font-size: 0.8rem;
+.datails-container .infos .rating,
+.datails-container .runtime {
+    font-size: 1rem;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+.datails-container .overviwer-container {
+    font-size: 12px;
     text-transform: capitalize;
-    opacity: 0.7;
+    opacity: 0.5;
+    font-weight: 600;
+    max-width: 100%;
+}
+
+.actress-container,
+.actress-container a {
+    display: flex;
+}
+
+.actress-container img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid rgb(71, 71, 71);
+    border-radius: 1rem;
+}
+
+.actress-container span {
+    font-size: 13px;
+    color: rgba(181, 181, 181, 1);
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 0 10px;
+    line-height: 40px;
+}
+
+@media only screen and (max-width: 1180px) {
+    .datails-container .img.img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .datails-container .img.img {
+        display: none;
+    }
+
+    .datails-container .info-names{
+        text-align: center;
+    }
+
+    .datails-container .infos-bases,
+    .actress-container {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .actress-container{
+        gap: 10px;
+    }
+
+    .actress-container span{
+        display: none;
+    }
 }
