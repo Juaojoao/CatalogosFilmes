@@ -1,0 +1,11 @@
+iframe {
+  min-width: 600px;
+  min-height: 300px;
+}
+
+@media (max-width: 768px) {
+  iframe {
+    min-width: 300px;
+    min-height: 150px;
+  }
+}

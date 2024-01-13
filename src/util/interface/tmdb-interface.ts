@@ -1,8 +1,8 @@
-export interface Movie {
+export interface TMDBResponse {
   id?: string;
   url?: string;
   poster_path?: string;
-  backdrop_path?: string
+  backdrop_path?: string;
   title?: string;
   name?: string;
   release_date?: string;
@@ -10,7 +10,8 @@ export interface Movie {
   vote_average: number;
   overview?: string;
   runtime: number;
-  trailer?: string;
+  number_of_episodes: number;
+  number_of_seasons: number;
 }
 
 export interface CreditsProps {
@@ -20,13 +21,13 @@ export interface CreditsProps {
 }
 
 export interface CardsMoviesProps {
-  movies: Movie[];
+  movies: TMDBResponse[];
   className?: string;
   url?: string;
 }
 
 export interface DatailsProps {
-  movies: Movie[];
+  movies: TMDBResponse[];
   credits: CreditsProps[];
   trailerId?: string;
 }

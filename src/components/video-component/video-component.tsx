@@ -1,16 +1,18 @@
+import "./style.css";
+
 interface VideoProps {
-    videoId: string;
+  videoId: string;
 }
 
-export const VideoComponent = ({videoId}: VideoProps) => {
-    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+export const VideoComponent = ({ videoId }: VideoProps) => {
+  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+
+  console.log(videoId);
 
   return (
     <div>
       <iframe
         title="YouTube Video"
-        width="560"
-        height="315"
         src={embedUrl}
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -18,4 +20,4 @@ export const VideoComponent = ({videoId}: VideoProps) => {
       ></iframe>
     </div>
   );
-}
+};

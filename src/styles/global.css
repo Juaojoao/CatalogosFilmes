@@ -60,7 +60,7 @@ a {
   );
 }
 
-#launcherBg::before{
+#launcherBg::before {
   opacity: 0.5;
   position: absolute;
   top: 0;
@@ -69,12 +69,14 @@ a {
   height: 100%;
   content: "";
   background: linear-gradient(
-    0deg,#020202 0,
-    rgba(2,2,2,.95) 20%,
-    rgba(2,2,2,.9) 35%,
-    rgba(2,2,2,.8) 45%,
-    rgba(2,2,2,.61) 60%,
-    rgba(0,0,21,.76) 100%);
+    0deg,
+    #020202 0,
+    rgba(2, 2, 2, 0.95) 20%,
+    rgba(2, 2, 2, 0.9) 35%,
+    rgba(2, 2, 2, 0.8) 45%,
+    rgba(2, 2, 2, 0.61) 60%,
+    rgba(0, 0, 21, 0.76) 100%
+  );
 }
 
 .container {

@@ -127,4 +127,8 @@
   .cards li .infos span {
     font-size: 0.6rem;
   }
+
+  .infos-bases {
+    flex-wrap: wrap;
+  }
 }
