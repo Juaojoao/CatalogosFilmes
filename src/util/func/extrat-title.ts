@@ -1,6 +1,6 @@
-import { Movie } from "../interface/tmdb-interface";
+import { TMDBResponse } from "../interface/tmdb-interface";
 
-export const extratTitle = (movie: Movie) => {
+export const extratTitle = (movie: TMDBResponse) => {
   if (!movie.title) return movie.name;
   return movie.title;
 };
