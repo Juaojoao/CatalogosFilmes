@@ -1,127 +1,127 @@
 .datails-container {
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    backdrop-filter: blur(5px);
-    margin-top: 2rem;
-    border-radius: 1rem;
-
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  margin-top: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 30px;
 }
 
-.datails-container>div {
-    display: flex;
-    gap: 2rem;
+.datails-container > div {
+  display: flex;
+  gap: 2rem;
 }
 
 .datails-container .img.img {
-    border-radius: 0.5rem;
-    height: 400px;
+  border-radius: 0.5rem;
+  height: 400px;
 }
 
 .datails-container .infos-container {
-    flex: 1;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  flex: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .datails-container .info-names {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .datails-container .info-name2 {
-    font-size: 32px;
-    line-height: 42px;
+  font-size: 32px;
+  line-height: 42px;
 }
 
 .datails-container .info-name {
-    font-size: 12px;
-    line-height: 30px;
-    width: auto;
-    letter-spacing: 4px;
-    font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  width: auto;
+  letter-spacing: 4px;
+  font-weight: 400;
 }
 
 .datails-container .infos-bases {
-    margin-top: 10px;
-    gap: 1rem;
-    justify-content: inherit;
+  margin-top: 10px;
+  gap: 1rem;
+  justify-content: inherit;
 }
 
 .datails-container .infos-bases span {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .datails-container .year {
-    letter-spacing: 2px;
+  letter-spacing: 2px;
 }
 
 .datails-container .infos .rating,
 .datails-container .runtime {
-    font-size: 1rem;
-    font-style: italic;
-    text-transform: lowercase;
+  font-size: 1rem;
+  font-style: italic;
+  text-transform: lowercase;
 }
 
 .datails-container .overviwer-container {
-    font-size: 12px;
-    text-transform: capitalize;
-    opacity: 0.5;
-    font-weight: 600;
-    max-width: 100%;
+  font-size: 12px;
+  text-transform: capitalize;
+  opacity: 0.5;
+  font-weight: 600;
+  max-width: 100%;
 }
 
 .actress-container,
 .actress-container a {
-    display: flex;
+  display: flex;
 }
 
 .actress-container img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border: 2px solid rgb(71, 71, 71);
-    border-radius: 1rem;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 2px solid rgb(71, 71, 71);
+  border-radius: 1rem;
 }
 
 .actress-container span {
-    font-size: 13px;
-    color: rgba(181, 181, 181, 1);
-    font-weight: 600;
-    text-transform: capitalize;
-    padding: 0 10px;
-    line-height: 40px;
+  font-size: 13px;
+  color: rgba(181, 181, 181, 1);
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0 10px;
+  line-height: 40px;
 }
 
 @media only screen and (max-width: 1180px) {
-    .datails-container .img.img {
-        display: none;
-    }
+  .datails-container .img.img {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 880px) {
-    .datails-container .img.img {
-        display: none;
-    }
+  .datails-container .img.img {
+    display: none;
+  }
 
-    .datails-container .info-names{
-        text-align: center;
-    }
+  .datails-container .info-names {
+    text-align: center;
+  }
 
-    .datails-container .infos-bases,
-    .actress-container {
-        justify-content: center;
-    }
+  .datails-container .infos-bases,
+  .actress-container {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .actress-container{
-        gap: 10px;
-    }
+  .actress-container {
+    gap: 10px;
+  }
 
-    .actress-container span{
-        display: none;
-    }
+  .actress-container span {
+    display: none;
+  }
 }

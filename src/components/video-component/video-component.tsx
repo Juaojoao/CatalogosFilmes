@@ -7,8 +7,6 @@ interface VideoProps {
 export const VideoComponent = ({ videoId }: VideoProps) => {
   const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
-  console.log(videoId);
-
   return (
     <div>
       <iframe

@@ -30,4 +30,6 @@ export interface DatailsProps {
   movies: TMDBResponse[];
   credits: CreditsProps[];
   trailerId?: string;
+  similarMovies?: TMDBResponse[];
+  url?: string;
 }

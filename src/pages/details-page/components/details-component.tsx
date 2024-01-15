@@ -18,6 +18,7 @@ export const DetailsComponent = ({
   const { id } = useParams();
   const [details, setDetails] = useState<TMDBResponse>();
   const [isCredit, setIsCredit] = useState<CreditsProps[]>([]);
+  const [isSimilar, setIsSimilar] = useState<TMDBResponse[]>([]);
   const [isTrailer, setIsTrailer] = useState();
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export const DetailsComponent = ({
       if (url) {
         try {
           const backgroundImageUrl = (await TMDBAuth.get(`${url}/${id}/images`))
-            .data.backdrops[0].file_path;
+            .data.backdrops[0]?.file_path;
           const launcherBgElement = document.querySelector("#launcherBg");
 
           if (launcherBgElement instanceof HTMLElement) {
@@ -36,13 +37,18 @@ export const DetailsComponent = ({
             .data;
           const CreditsData = (await TMDBAuth.get(`${url}/${id}/credits`)).data
             .cast;
-          const TrailerData = await (
-            await TMDBAuth.get(`${url}/${id}/videos`)
-          ).data.results[0]?.key;
+          const TrailerData = (await TMDBAuth.get(`${url}/${id}/videos`)).data
+            .results[0]?.key;
 
-          setDetails(TMDBData);
-          setIsCredit(CreditsData);
-          setIsTrailer(TrailerData);
+          const SimilarData = (await TMDBAuth.get(`${url}/${id}/similar`)).data
+            ?.results;
+
+          if (TMDBData && CreditsData && TrailerData) {
+            setDetails(TMDBData);
+            setIsCredit(CreditsData);
+            setIsTrailer(TrailerData);
+            setIsSimilar(SimilarData);
+          }
         } catch (e) {
           console.error("Erro ao obter os detalhes do filme:", e);
         }
@@ -52,6 +58,15 @@ export const DetailsComponent = ({
     getDetailsById();
   }, [id, url]);
 
+  const getUrl = (url: string) => {
+    if (url === "movie") {
+      return "filmes";
+    }
+    if (url === "tv") {
+      return "series";
+    }
+  };
+
   return (
     <>
       {details && (
@@ -59,6 +74,8 @@ export const DetailsComponent = ({
           movies={[details]}
           credits={isCredit}
           trailerId={isTrailer}
+          similarMovies={isSimilar}
+          url={getUrl(url)}
         />
       )}
     </>
