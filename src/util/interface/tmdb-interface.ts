@@ -7,11 +7,12 @@ export interface TMDBResponse {
   name?: string;
   release_date?: string;
   first_air_date?: string;
-  vote_average: number;
+  vote_average?: number;
   overview?: string;
-  runtime: number;
-  number_of_episodes: number;
-  number_of_seasons: number;
+  runtime?: number;
+  number_of_episodes?: number;
+  number_of_seasons?: number;
+  media_type?: string;
 }
 
 export interface CreditsProps {
@@ -24,6 +25,7 @@ export interface CardsMoviesProps {
   movies: TMDBResponse[];
   className?: string;
   url?: string;
+  handleClicked?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 export interface DatailsProps {
@@ -32,4 +34,18 @@ export interface DatailsProps {
   trailerId?: string;
   similarMovies?: TMDBResponse[];
   url?: string;
+}
+
+export interface PeopleProps {
+  peopleInfo?: PeopleInfo[];
+  tmdbData?: TMDBResponse[];
+  url?: string;
+}
+
+export interface PeopleInfo {
+  id?: number;
+  name?: string;
+  profile_path?: string;
+  birthday?: string;
+  biography?: string;
 }

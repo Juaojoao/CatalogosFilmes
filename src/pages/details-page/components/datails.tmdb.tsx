@@ -1,12 +1,12 @@
 import "./style.css";
-import { getReleaseYear } from "../../util/func/extrat-date";
-import { extratTitle } from "../../util/func/extrat-title";
-import { DatailsProps } from "../../util/interface/tmdb-interface";
-import { image_api } from "../../util/variaveis";
+import { getReleaseYear } from "../../../util/func/extrat-date";
+import { extratTitle } from "../../../util/func/extrat-title";
+import { DatailsProps } from "../../../util/interface/tmdb-interface";
+import { image_api } from "../../../util/variaveis";
 import { Link } from "react-router-dom";
-import { VideoComponent } from "../video-component/video-component";
-import { TransitionsModal } from "../modal/modal-component";
-import { CardsComponent } from "../cards/cardsDrag";
+import { VideoComponent } from "../../../components/video-component/video-component";
+import { TransitionsModal } from "../../../components/modal/modal-component";
+import { CardsDragComponent } from "../../../components/cards/cardsDrag";
 
 export const DatailsTmdbComponent = ({
   movies,
@@ -28,28 +28,36 @@ export const DatailsTmdbComponent = ({
   return (
     <>
       <div className="datails-container">
-        {movies.map((movie, index) => (
+        {movies?.map((movie, index) => (
           <div key={index}>
-            <img
-              className="img"
-              src={`${image_api}${movie.poster_path}`}
-              alt={extratTitle(movie)}
-              decoding="async"
-            />
+            {movie.poster_path && (
+              <img
+                className="img"
+                src={`${image_api}${movie.poster_path}`}
+                alt={extratTitle(movie)}
+                decoding="async"
+              />
+            )}
             <div className="infos-container">
               <div className="infos">
                 <div className="info-names">
-                  <span className="info-name">{`Assistir ${extratTitle(
-                    movie
-                  )} Online`}</span>
-                  <span className="info-name2">{extratTitle(movie)}</span>
+                  {movie.title && (
+                    <span className="info-name">{`Assistir ${extratTitle(
+                      movie
+                    )} Online`}</span>
+                  )}
+                  {movie.title && (
+                    <span className="info-name2">{extratTitle(movie)}</span>
+                  )}
                 </div>
                 <div className="infos-bases">
                   <div className="year">
-                    <span>{getReleaseYear(movie)}</span>
+                    {movie.release_date && <span>{getReleaseYear(movie)}</span>}
                   </div>
                   <div className="rating">
-                    <span>{`${movie.vote_average.toFixed(1)}/10`}</span>
+                    {movie.vote_average && (
+                      <span>{`${movie.vote_average.toFixed(1)}/10`}</span>
+                    )}
                   </div>
                   {movie.runtime ? (
                     <div className="runtime">
@@ -70,15 +78,10 @@ export const DatailsTmdbComponent = ({
               </div>
               <div className="actress-container">
                 {credits.slice(0, 4).map((actress, index) => (
-                  <Link
-                    key={index}
-                    to={`/fireflix/pessoa/${actress.id}-${actress.name
-                      .replace(" ", "-")
-                      .toLocaleLowerCase()}`}
-                  >
+                  <Link key={index} to={`/fireflix/pessoa/${actress.id}`}>
                     <img
                       src={`${image_api}${actress.profile_path}`}
-                      alt=""
+                      alt={actress.name}
                       height={67}
                       width={45}
                     />
@@ -94,7 +97,7 @@ export const DatailsTmdbComponent = ({
       {similarMovies && (
         <>
           <h2>Recomendados</h2>
-          <CardsComponent movies={similarMovies} url={url} />
+          <CardsDragComponent movies={similarMovies} url={url} />
         </>
       )}
     </>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CardsComponent } from "../../../components/cards/cardsDrag";
+import { CardsDragComponent } from "../../../components/cards/cardsDrag";
 import { MovieList, language_api } from "../../../util/variaveis";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
 
@@ -34,7 +34,7 @@ export const MoviePageComponent = () => {
       {MovieList.map((movie) => (
         <div key={movie.url}>
           <h2>{movie.text}</h2>
-          <CardsComponent
+          <CardsDragComponent
             movies={movies[movie.url] || []}
             url="filmes"
             className={fadeEnter ? "fade-enter" : ""}

@@ -5,7 +5,7 @@ import {
   CreditsProps,
   TMDBResponse,
 } from "../../../util/interface/tmdb-interface";
-import { DatailsTmdbComponent } from "../../../components/datails-tmdb/datails.tmdb";
+import { DatailsTmdbComponent } from "./datails.tmdb";
 import { image_api, language_api } from "../../../util/variaveis";
 
 interface DetailsComponentProps {

@@ -1,7 +1,7 @@
 import "./style.css";
 import { useEffect, useState } from "react";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
-import { CardsComponent } from "../../../components/cards/cardsDrag";
+import { CardsDragComponent } from "../../../components/cards/cardsDrag";
 import { Button } from "../../../components/buttons/button";
 import { MovieList, language_api } from "../../../util/variaveis";
 
@@ -12,7 +12,9 @@ export const MoviesComponent = () => {
 
   useEffect(() => {
     const getMoviesList = async () => {
-      const response = await TMDBAuth.get(`movie/${selectedMovie}${language_api}`);
+      const response = await TMDBAuth.get(
+        `movie/${selectedMovie}${language_api}`
+      );
       setMovies(response.data.results);
     };
 
@@ -37,7 +39,7 @@ export const MoviesComponent = () => {
           />
         ))}
       </div>
-      <CardsComponent
+      <CardsDragComponent
         movies={movies}
         url="filmes"
         className={fadeEnter ? "fade-enter" : ""}
