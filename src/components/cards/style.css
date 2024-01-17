@@ -8,7 +8,7 @@
   padding: 1rem 0;
 }
 
-.cards li {
+.ul-card li {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,12 +19,12 @@
   cursor: pointer;
 }
 
-.cards li:hover {
+.ul-card li:hover {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
 
-.cards li::after {
+.ul-card li::after {
   content: "";
   position: absolute;
   top: 0;
@@ -40,7 +40,7 @@
   border-radius: 0.9rem;
 }
 
-.cards li .infos {
+.ul-card li .infos {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -52,14 +52,14 @@
   gap: 0.5rem;
 }
 
-.cards li .infos span {
+.ul-card li .infos span {
   font-weight: 600;
   display: block;
   font-size: 0.8rem;
   line-height: normal;
 }
 
-.cards li img {
+.ul-card li img {
   object-fit: cover;
   border-radius: 1rem;
   max-width: 185px;
@@ -85,12 +85,12 @@
 }
 
 @media (max-width: 768px) {
-  .cards li img {
+  .ul-card li img {
     max-width: 150px;
     max-height: 220px;
   }
 
-  .cards li .infos {
+  .ul-card li .infos {
     padding: 1rem;
   }
 }
@@ -110,21 +110,21 @@
     gap: 1rem;
   }
 
-  .cards li img {
+  .ul-card li img {
     max-width: 120px;
     max-height: 180px;
     border-radius: 0.5rem;
   }
 
-  .cards li::after {
+  .ul-card li::after {
     border-radius: 0.4rem;
   }
 
-  .cards li .infos {
+  .ul-card li .infos {
     padding: 0.5rem;
   }
 
-  .cards li .infos span {
+  .ul-card li .infos span {
     font-size: 0.6rem;
   }
 

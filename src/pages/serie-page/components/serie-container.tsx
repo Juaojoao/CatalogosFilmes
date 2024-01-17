@@ -24,18 +24,18 @@ export const SeriePageComponent = () => {
       }, 2000);
     };
 
-    serieList.forEach((siries) => {
-      fetchData(siries.url);
+    serieList.forEach((series) => {
+      fetchData(series.url);
     });
   }, []);
 
   return (
     <div className="container-cards">
-      {serieList.map((sirie) => (
-        <div key={sirie.url}>
-          <h2>{sirie.text}</h2>
+      {serieList.map((serie) => (
+        <div key={serie.url}>
+          <h2>{serie.text}</h2>
           <CardsDragComponent
-            movies={series[sirie.url] || []}
+            movies={series[serie.url] || []}
             className={fadeEnter ? "fade-enter" : ""}
             url="series"
           />

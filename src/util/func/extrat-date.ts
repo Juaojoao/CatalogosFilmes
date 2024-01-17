@@ -6,8 +6,8 @@ const extratYear = (data: string) => {
 };
 
 const extratDataRelease = (movie: TMDBResponse) => {
-  if (!movie.release_date) return movie.first_air_date;
-  return movie.release_date;
+  if (movie.release_date) return movie.release_date;
+  if (movie.first_air_date) return movie.first_air_date;
 };
 
 export const getReleaseYear = (movie: TMDBResponse) => {

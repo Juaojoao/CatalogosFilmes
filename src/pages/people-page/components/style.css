@@ -1,15 +1,28 @@
 .people-info,
-.people-info-details {
+.people-info-container,
+.info-details,
+.people-container-card > ul {
   display: flex;
-  flex-direction: column;
-  width: 100%;
   gap: 10px;
+  width: 100%;
+}
+
+.people-info-container {
+  padding: 20px;
+}
+
+.people-info {
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .title {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -26,6 +39,7 @@
   font-size: 0.9rem;
   font-weight: 400;
   text-align: justify;
+  opacity: 0.7;
 }
 
 .people-info .people-info-image img {
@@ -35,11 +49,51 @@
 }
 
 .people-info-details {
-  margin-top: 20px;
-  max-width: 300px;
+  width: 100%;
   text-align: left;
 }
 
 .people-container-card > ul {
-  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .text {
+    text-align: inherit;
+  }
+
+  .people-info-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .people-info-details {
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  .people-info .people-info-image img {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .people-info-details {
+    width: 100%;
+  }
+
+  .people-info .people-info-image img {
+    max-width: 300px;
+    width: 100%;
+  }
 }

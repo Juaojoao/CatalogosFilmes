@@ -76,14 +76,30 @@
 .actress-container,
 .actress-container a {
   display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.actress-container img {
-  width: 40px;
-  height: 40px;
+.actress-container a {
+  flex-direction: column;
+}
+
+.actress-container img,
+.actress-none-img {
+  width: 150px;
+  height: 200px;
   object-fit: cover;
   border: 2px solid rgb(71, 71, 71);
-  border-radius: 1rem;
+  transform: skew(-5deg);
+}
+
+.actress-none-img {
+  background-color: rgba(100, 100, 100, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
 }
 
 .actress-container span {
@@ -93,6 +109,11 @@
   text-transform: capitalize;
   padding: 0 10px;
   line-height: 40px;
+}
+
+.actress-container .actress-none-img > span {
+  font-weight: 700;
+  font-size: 8rem;
 }
 
 @media only screen and (max-width: 1180px) {
@@ -121,7 +142,56 @@
     gap: 10px;
   }
 
-  .actress-container span {
+  .actress-container a > span {
     display: none;
+  }
+
+  .actress-container {
+    flex-wrap: wrap;
+  }
+
+  .actress-container img,
+  .actress-none-img {
+    width: 70px;
+    height: 120px;
+  }
+
+  .actress-container .actress-none-img > span {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .datails-container .info-name2 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .datails-container .info-name {
+    font-size: 10px;
+    line-height: 20px;
+  }
+
+  .datails-container .infos-bases {
+    gap: 0.5rem;
+  }
+
+  .datails-container .infos-bases span {
+    font-size: 10px;
+  }
+
+  .datails-container .infos .rating,
+  .datails-container .runtime {
+    font-size: 0.8rem;
+  }
+
+  .datails-container .overviwer-container {
+    font-size: 10px;
+  }
+
+  .actress-container img,
+  .actress-none-img {
+    width: 50px;
+    height: 100px;
   }
 }

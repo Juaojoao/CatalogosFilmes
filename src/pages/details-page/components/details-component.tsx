@@ -7,6 +7,7 @@ import {
 } from "../../../util/interface/tmdb-interface";
 import { DatailsTmdbComponent } from "./datails.tmdb";
 import { image_api, language_api } from "../../../util/variaveis";
+import { getUrl } from "../../../util/func/get-url";
 
 interface DetailsComponentProps {
   url: string;
@@ -57,15 +58,6 @@ export const DetailsComponent = ({
 
     getDetailsById();
   }, [id, url]);
-
-  const getUrl = (url: string) => {
-    if (url === "movie") {
-      return "filmes";
-    }
-    if (url === "tv") {
-      return "series";
-    }
-  };
 
   return (
     <>

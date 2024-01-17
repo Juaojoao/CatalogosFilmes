@@ -77,24 +77,31 @@ export const DatailsTmdbComponent = ({
                 </div>
               </div>
               <div className="actress-container">
-                {credits.slice(0, 4).map((actress, index) => (
-                  <Link key={index} to={`/fireflix/pessoa/${actress.id}`}>
-                    <img
-                      src={`${image_api}${actress.profile_path}`}
-                      alt={actress.name}
-                      height={67}
-                      width={45}
-                    />
-                    <span>{actress.name}</span>
-                  </Link>
-                ))}
+                {credits &&
+                  credits.slice(0, 4).map((actress, index) => (
+                    <Link key={index} to={`/fireflix/pessoa/${actress.id}`}>
+                      {actress.profile_path ? (
+                        <img
+                          src={`${image_api}${actress.profile_path}`}
+                          alt={actress.name}
+                          height={67}
+                          width={45}
+                        />
+                      ) : (
+                        <div className="actress-none-img">
+                          <span>{actress.name.charAt(0)}</span>
+                        </div>
+                      )}
+                      <span>{actress.name}</span>
+                    </Link>
+                  ))}
               </div>
               <div className="overviwer-container">{movie.overview}</div>
             </div>
           </div>
         ))}
       </div>
-      {similarMovies && (
+      {similarMovies && similarMovies?.length > 0 && (
         <>
           <h2>Recomendados</h2>
           <CardsDragComponent movies={similarMovies} url={url} />
