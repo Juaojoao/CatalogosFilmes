@@ -4,6 +4,7 @@ import { Filmes } from "../pages/movie-page/filmes";
 import { Series } from "../pages/serie-page/series";
 import { MovieOrSeriesDetails } from "../pages/details-page/type-details";
 import { PeoplePage } from "../pages/people-page/people";
+import { SearchPage } from "../pages/search-page/search-page";
 
 export const Router = () => {
   return (
@@ -13,6 +14,7 @@ export const Router = () => {
       <Route path="/fireflix/series" element={<Series />} />
       <Route path="/fireflix/:type/:id" element={<MovieOrSeriesDetails />} />
       <Route path="/fireflix/pessoa/:id" element={<PeoplePage />} />
+      <Route path="fireflix/search" element={<SearchPage />} />
     </Routes>
   );
 };

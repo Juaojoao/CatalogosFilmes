@@ -7,13 +7,13 @@ import { PeopleCredits } from "./people-credits";
 import { PeopleInfos } from "./people-infos";
 import { useParams } from "react-router-dom";
 import { TMDBAuth } from "../../../services/TMDB_API/TmdbAPI";
-import { getUrl } from "../../../util/func/get-url";
+import { language_api } from "../../../util/variaveis";
 
 export const PeopleComponent = () => {
   const { id } = useParams();
   const [isPeopleInfo, setIsPeopleInfo] = useState<PeopleInfo>();
   const [isPeopleCredits, setIsPeopleCredits] = useState<TMDBResponse[]>([]);
-  const [isMidiaType, setIsMidiaType] = useState();
+  const [isMidiaType, setIsMidiaType] = useState<"movie" | "tv">();
 
   useEffect(() => {
     const getPeopleInfo = async () => {
@@ -49,30 +49,42 @@ export const PeopleComponent = () => {
     const getPeopleCredits = async () => {
       try {
         const peopleCredits = (
-          await TMDBAuth.get(`person/${id}/combined_credits`)
+          await TMDBAuth.get(`person/${id}/combined_credits${language_api}`)
         ).data.cast;
 
         if (peopleCredits && peopleCredits.length > 0) {
-          const index = 0;
-          const midiaType = peopleCredits[index]?.media_type;
+          const tvCredits = peopleCredits.filter(
+            (credit: any) => credit.media_type === "tv"
+          );
+          const movieCredits = peopleCredits.filter(
+            (credit: any) => credit.media_type === "movie"
+          );
 
-          setIsPeopleCredits(peopleCredits);
-          setIsMidiaType(midiaType);
+          if (tvCredits) {
+            setIsMidiaType("tv");
+            setIsPeopleCredits(tvCredits);
+          } else if (movieCredits) {
+            setIsMidiaType("movie");
+            setIsPeopleCredits(movieCredits);
+          }
         }
       } catch (error) {
         console.log(error);
       }
     };
 
-    getPeopleCredits();
     getPeopleInfo();
+    getPeopleCredits();
   }, [id]);
 
   return (
     <section className="people-container">
       {isPeopleInfo && <PeopleInfos peopleInfo={[isPeopleInfo]} />}
       {isPeopleCredits.length > 0 && (
-        <PeopleCredits tmdbData={isPeopleCredits} url={getUrl(isMidiaType)} />
+        <PeopleCredits
+          tmdbData={isPeopleCredits}
+          url={isMidiaType === "tv" ? "series" : "filmes"}
+        />
       )}
     </section>
   );
