@@ -1,5 +1,6 @@
 # 🔥 FireFlix 🔥
 Projeto feito para colocar em prática o que eu tenho estudado.
+
 Página: https://juaojoao.github.io/fireflix/
 ### Conteúdo aplicado:
 - TypeScript
