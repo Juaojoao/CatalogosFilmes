@@ -24,6 +24,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  overflow-x: hidden;
 }
 
 #launcherBg {
@@ -88,7 +89,7 @@ a {
 
 .title-h1 {
   position: relative;
-  z-index: 300;
+  z-index: 10;
 }
 
 .hover {

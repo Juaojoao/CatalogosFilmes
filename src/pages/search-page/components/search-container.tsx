@@ -12,8 +12,6 @@ export const SearchContainer = () => {
   const [isDataTmdb, setIsDataTmdb] = useState<TMDBResponse[]>([]);
   const [isMidiaType, setIsMidiaType] = useState<"movie" | "tv">();
 
-  console.log("renderizando", search);
-
   useEffect(() => {
     try {
       const getSearch = async () => {
