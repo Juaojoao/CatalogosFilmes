@@ -1,7 +1,5 @@
 # 🔥 FireFlix 🔥
-#
-##Projeto feito para colocar em prática o que eu tenho estudado.
-#
+Projeto feito para colocar em prática o que eu tenho estudado.
 ### Conteúdo aplicado:
 - TypeScript
 - React
@@ -10,4 +8,5 @@
 - Renderização de componentes
 
   API utilizada: https://www.themoviedb.org
-![alt text]([http://url/to/img.png](https://1.bp.blogspot.com/--vLmFcgNEBY/YLzAIUOYFBI/AAAAAAAALA0/knURm7dhdhkcW84kZDxGYlNSBWTPfT1DwCNcBGAsYHQ/w400-h100/ddufkeh-8493ecbd-cbfc-4249-a069-2edd1ae790a5.gif)https://1.bp.blogspot.com/--vLmFcgNEBY/YLzAIUOYFBI/AAAAAAAALA0/knURm7dhdhkcW84kZDxGYlNSBWTPfT1DwCNcBGAsYHQ/w400-h100/ddufkeh-8493ecbd-cbfc-4249-a069-2edd1ae790a5.gif)
+  
+![alt text](https://1.bp.blogspot.com/--vLmFcgNEBY/YLzAIUOYFBI/AAAAAAAALA0/knURm7dhdhkcW84kZDxGYlNSBWTPfT1DwCNcBGAsYHQ/w400-h100/ddufkeh-8493ecbd-cbfc-4249-a069-2edd1ae790a5.gif)
