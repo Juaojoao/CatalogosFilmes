@@ -35,7 +35,7 @@ export const Header = () => {
       <div className="container">
         <nav>
           <Link className="logo" to="/fireflix">
-            LOGO
+            <img src="src/assets/icons/logo.svg" alt="Fireflix" />
           </Link>
 
           {isNavMobileQuery && (

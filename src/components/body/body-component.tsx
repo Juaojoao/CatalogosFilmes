@@ -1,17 +1,15 @@
 import { FooterComponent } from "../footer/footer";
 import { Header } from "../header/header";
-import { HomeLauncher } from "../homeLauncher/homeLauncher";
 
 interface BodyProps {
   content: JSX.Element;
   status?: boolean;
 }
 
-export const BodyComponent = ({ content, status }: BodyProps) => {
+export const BodyComponent = ({ content }: BodyProps) => {
   return (
     <>
       <Header />
-      {status ? <HomeLauncher /> : <></>}
       {content}
       <FooterComponent />
     </>
