@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { InputSearch } from "../input/seach";
 import { useMediaQuery } from "@react-hook/media-query";
+import logoSvg from "../../../public/logo.svg";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export const Header = () => {
       <div className="container">
         <nav>
           <Link className="logo" to="/fireflix">
-            <img src="/logo.svg" alt="Fireflix" />
+            <img src={logoSvg} alt="Fireflix" />
           </Link>
 
           {isNavMobileQuery && (
